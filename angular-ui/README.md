@@ -1,4 +1,4 @@
-# Proje Hakkında
+## Proje Hakkında
 
 - Projeyi angular ^11.0.0 versiyonunu kullandım.
 - Dataları browserın local storage kısmında tuttum.
