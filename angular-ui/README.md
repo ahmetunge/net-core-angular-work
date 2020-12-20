@@ -8,8 +8,8 @@
 
 ## Faydalandığım Kaynaklar
 
-- https://angular.io/ (https://angular.io/)
-- https://getbootstrap.com/ (https://getbootstrap.com/)
-- https://github.com/ (https://github.com/)
-- https://jasonwatmore.com/ (https://jasonwatmore.com/)
-- https://stackoverflow.com/ (https://stackoverflow.com/)
+- https://angular.io/
+- https://getbootstrap.com/
+- https://github.com/
+- https://jasonwatmore.com/
+- https://stackoverflow.com/
