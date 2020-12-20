@@ -1,0 +1,17 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/ngx-toastr/toastr.css";
+
+a {
+  cursor: pointer;
+}
+
+.app-container {
+  min-height: 1000px;
+  overflow: hidden;
+}
+
+.btn-delete-user {
+  width: 40px;
+  text-align: center;
+  box-sizing: content-box;
+}

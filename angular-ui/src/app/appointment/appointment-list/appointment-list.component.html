@@ -1,0 +1,44 @@
+<h1>Appointments</h1>
+<a routerLink="new" class="btn btn-sm btn-success mb-2">Add Appointment</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width: 30%">Name</th>
+      <th style="width: 30%">StartDate</th>
+      <th style="width: 30%">EndDate</th>
+      <th style="width: 30%">IsActive</th>
+      <th style="width: 10%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.name }}</td>
+      <td>{{ appointment.startDate | date: "mediumDate" }}</td>
+      <td>{{ appointment.endDate | date: "mediumDate" }}</td>
+      <td>{{ appointment.isActive }}</td>
+      <td style="white-space: nowrap">
+        <a
+          routerLink="{{ appointment.id }}/edit"
+          class="btn btn-sm btn-primary mr-1"
+          >Edit</a
+        >
+        <button
+          (click)="deleteAppointment(appointment.id)"
+          class="btn btn-sm btn-danger btn-delete-user"
+          [disabled]="appointment.isDeleting"
+        >
+          <span
+            *ngIf="appointment.isDeleting"
+            class="spinner-border spinner-border-sm"
+          ></span>
+          <span *ngIf="!appointment.isDeleting">Delete</span>
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="!appointments">
+      <td colspan="4" class="text-center">
+        <span class="spinner-border spinner-border-lg align-center"></span>
+      </td>
+    </tr>
+  </tbody>
+</table>

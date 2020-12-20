@@ -1,0 +1,70 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-primary"
+  *ngIf="user && user.id > 0"
+>
+  <a class="navbar-brand" href="#">Loodos</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Appointment
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a
+            class="dropdown-item"
+            href="#"
+            [routerLink]="['/appointments/new']"
+            routerLinkActive="router-link-active"
+            >Add Appointment</a
+          >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/appointments']"
+            routerLinkActive="router-link-active"
+            >List Appointment</a
+          >
+        </div>
+      </li>
+    </ul>
+
+    <button
+      (click)="logout()"
+      class="btn btn-success my-2 my-sm-0"
+      type="submit"
+    >
+      Logout
+    </button>
+  </div>
+</nav>
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+  <router-outlet></router-outlet>
+</div>
